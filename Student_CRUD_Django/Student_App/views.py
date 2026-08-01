@@ -1,5 +1,5 @@
 from django.contrib.auth import logout as auth_logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import redirect, render
 
 from .models import Student
@@ -51,6 +51,7 @@ def create_student_type2(request):
 ## Delete a student by ID and redirect to the index page
 ## http://127.0.0.1:8000/delete/<student_id>/
 @login_required
+@permission_required('Student_App.delete_student')
 def delete_student(request, student_id):
     student = Student.objects.get(id=student_id)
     student.delete()
