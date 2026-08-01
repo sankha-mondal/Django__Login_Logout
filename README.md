@@ -1,4 +1,4 @@
-# Create Superuser OR admin with passwd:
+# 🌐 Create Superuser OR admin with passwd:
 -----------------------------------------
     python manage.py createsuperuser
 Username (leave blank to use 'sankmond'): admin
@@ -13,7 +13,7 @@ Superuser created successfully.
 
     http://localhost:8000/admin/
 
-# Required changes to implement Login-Logout:
+# 🌐 Required changes to implement Login-Logout:
 ----------------------------------------------
 setting.py
 
@@ -35,7 +35,7 @@ login.html
     </form>
 
 
-# Operations:
+# 🌐 Operations:
 --------------
 ### Login Page:
 <img width="1871" height="959" alt="image" src="https://github.com/user-attachments/assets/3bbdab7f-b74d-4f46-adf6-ea37e7579103" />
