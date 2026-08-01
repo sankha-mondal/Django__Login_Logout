@@ -28,5 +28,7 @@ urlpatterns = [
     path('update_type2/<int:student_id>/', views.update_student_type2, name='update_student_type2'),
 
     # Authentication URLs
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('logout/', views.logout, name='logout'),
+
 ]

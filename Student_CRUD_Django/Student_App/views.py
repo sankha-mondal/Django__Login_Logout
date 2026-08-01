@@ -88,3 +88,6 @@ def update_student_type2(request, student_id):
             form.save()
         return redirect('/')
     return render(request, 'students/update_type2.html', {'form': form})
+
+def logout(request):
+    return render(request, 'registration/logout.html')
