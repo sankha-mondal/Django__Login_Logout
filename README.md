@@ -35,5 +35,11 @@ login.html
     </form>
 
 
-    
+## Operations:
+--------------
+<img width="1871" height="959" alt="image" src="https://github.com/user-attachments/assets/3bbdab7f-b74d-4f46-adf6-ea37e7579103" />
+
+<img width="1868" height="929" alt="image" src="https://github.com/user-attachments/assets/bb779af1-1c86-4629-b2de-b209e105087a" />
+
+
 
