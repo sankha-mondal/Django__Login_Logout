@@ -1,7 +1,9 @@
+from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
+
 from .models import Student
 from .froms import StudentForm
-from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -89,5 +91,10 @@ def update_student_type2(request, student_id):
         return redirect('/')
     return render(request, 'students/update_type2.html', {'form': form})
 
-def logout(request):
-    return render(request, 'registration/logout.html')
+
+
+## Logout the user and redirect to the login page
+## http://127.0.0.1:8000/logout/
+def logout_user(request):
+    auth_logout(request)
+    return redirect('login')

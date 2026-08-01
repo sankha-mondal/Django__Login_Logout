@@ -44,9 +44,6 @@
     <a href="{% url 'create_student_type2' %}">Create Student Type-2</a>
 
     <br><br>
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
+    <a href="{% url 'logout_action' %}">Logout</a>
 </body>
 </html>

@@ -122,4 +122,4 @@ STATIC_URL = 'static/'
 
 ## Login and Logout Redirect URLs
 LOGIN_REDIRECT_URL = '/'  # Redirect to home page after login
-LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
+LOGOUT_REDIRECT_URL = '/accounts/login/'  # Redirect to login page after logout

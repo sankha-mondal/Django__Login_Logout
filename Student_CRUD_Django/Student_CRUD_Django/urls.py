@@ -29,6 +29,6 @@ urlpatterns = [
 
     # Authentication URLs
     path('accounts/', include('django.contrib.auth.urls')),
-    path('logout/', views.logout, name='logout'),
+    path('logout/', views.logout_user, name='logout_action'),
 
 ]
