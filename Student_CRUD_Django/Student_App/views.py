@@ -1,11 +1,13 @@
 from django.shortcuts import redirect, render
 from .models import Student
 from .froms import StudentForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 ## Get all students and render them in the index.html template
 ## http://127.0.0.1:8000/
+@login_required
 def get_student(request):
     students = Student.objects.all()
     return render(request, 'students/index.html', {'students': students})
@@ -14,6 +16,7 @@ def get_student(request):
 
 ## Create a new student using the first method (manual form handling)
 ## http://127.0.0.1:8000/create_type1/
+@login_required
 def create_student_type1(request):
     if request.method == 'POST':
         firstname = request.POST.get('firstname')
@@ -30,6 +33,7 @@ def create_student_type1(request):
 
 ## Create a new student using the second method (Django forms)
 ## http://127.0.0.1:8000/create_type2/
+@login_required 
 def create_student_type2(request):
     form = StudentForm()
     if request.method == 'POST':
@@ -44,6 +48,7 @@ def create_student_type2(request):
 
 ## Delete a student by ID and redirect to the index page
 ## http://127.0.0.1:8000/delete/<student_id>/
+@login_required
 def delete_student(request, student_id):
     student = Student.objects.get(id=student_id)
     student.delete()
@@ -51,7 +56,9 @@ def delete_student(request, student_id):
 
 
 
-
+## Update a student using the first method (manual form handling)
+## http://127.0.0.1:8000/update_type1/<student_id>/
+@login_required
 def update_student_type1(request, student_id):
     student = Student.objects.get(id=student_id)
     if request.method == 'POST':
@@ -69,6 +76,9 @@ def update_student_type1(request, student_id):
         return redirect('/')
     return render(request, 'students/update_type1.html', {'student': student})
 
+## Update a student using the second method (Django forms)
+## http://127.0.0.1:8000/update_type2/<student_id>/
+@login_required
 def update_student_type2(request, student_id):
     student = Student.objects.get(id=student_id)
     form = StudentForm(instance=student)
