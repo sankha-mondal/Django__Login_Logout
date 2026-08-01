@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student Type-1</title>
+</head>
+<body>
+    <h1>Create Student Type-1 using Manual Form Handling</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname" required>
+        <br>
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastname" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required>
+        <br>
+        <label for="testscore">Test Score:</label>
+        <input type="number" name="testscore" id="testscore" required>
+        <br><br>
+        <button type="submit">Create Student</button>
+    </form>
+</body>
+</html>

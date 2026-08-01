@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Information</title>
+</head>
+<body>
+    <h1>Students Information</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Test Score</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.firstname }}</td>
+                <td>{{ student.lastname }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.testscore }}</td>
+                <td>
+                    <a href="{% url 'delete_student' student.id %}">Delete</a>
+                </td>
+                <td>
+                    <a href="{% url 'update_student_type1' student.id %}">Update Type-1</a> |
+                    <a href="{% url 'update_student_type2' student.id %}">Update Type-2</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br><br>
+    <a href="{% url 'create_student_type1' %}">Create Student Type-1</a> <br>
+    <a href="{% url 'create_student_type2' %}">Create Student Type-2</a>
+
+</body>
+</html>
